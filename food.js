@@ -3,18 +3,19 @@ var foodList = document.getElementById("main-content")
 
 function dogDataCall () {
 	var dogData = JSON.parse(this.responseText);
-	populateDOMDog(dogData);
+	populateDOM(dogData);
 }
 
 function catDataCall () {
 	var catData = JSON.parse(this.responseText);
-	populateDOMCat(catData)
+	populateDOM(catData)
 }
 
-function populateDOMDog (XHRdata) {
-	for (var i = 0; i < XHRdata.dog_brands.length; i++) {
-		foodList.innerHTML += `<h2 class="brand">${XHRdata.dog_brands[i].brand}</h2>`;
-		var loopData = XHRdata.dog_brands[i].types;
+function populateDOM (XHRdata) {
+	for (var i = 0; i < XHRdata.brands.length; i++) {
+		foodList.innerHTML += `<h2 class="brand">${XHRdata.brands[i].brand}</h2>`;
+		var loopData = XHRdata.brands[i].types;
+		console.log("loopData:", loopData);
 		for (var j = 0; j < loopData.length; j++) {
 			foodList.innerHTML += `<h3 class="types">${loopData[j].type}</h3>`
 			var arrayData = loopData[j].volumes;
@@ -23,9 +24,8 @@ function populateDOMDog (XHRdata) {
 			} // k
 		} // j
 	} // i
-
-
 }
+
 
 var dogDataRequest = new XMLHttpRequest();
 var catDataRequest = new XMLHttpRequest();
