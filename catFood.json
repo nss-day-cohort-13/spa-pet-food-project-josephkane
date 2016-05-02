@@ -1,0 +1,43 @@
+{
+	"cat_brands": [
+		{
+			"brand": "Purrina",
+			"breed": ["Siamese", "Bengal", "Snowshoe", "Munchkin"],
+			"line": [
+				{
+					"type": "kitten",
+					"sizes": [
+						{
+							"size": "20oz",
+							"price": "19.99"
+						}
+						{
+							"size": "32oz",
+							"price": "26.99"
+						}
+						{
+							"size": "64oz",
+							"price": "34.99"
+						}
+					]
+				}
+				{
+					"type": "elite",
+					"sizes": [
+						{
+							"size": "20oz",
+							"price": "24.99"
+						}
+						{
+							"size": "40oz",
+							"price": "47.99"
+						}
+					]
+				}
+			]
+		}
+		{
+			"brand": "Meow Meal"
+		}
+	]
+}
