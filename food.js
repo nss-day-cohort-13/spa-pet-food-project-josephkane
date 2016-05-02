@@ -15,7 +15,12 @@ function populateDOM (XHRdata) {
 	for (var i = 0; i < XHRdata.brands.length; i++) {
 		foodList.innerHTML += `<h2 class="brand">${XHRdata.brands[i].brand}</h2>`;
 		var loopData = XHRdata.brands[i].types;
-		console.log("loopData:", loopData);
+		var breedArray = XHRdata.brands[i];
+		if (XHRdata.brands[i].breed) {
+			for (var l = 0; l < breedArray.breed.length; l++) {
+				foodList.innerHTML += `<div class="cat-breeds">${breedArray.breed[l]}</div>`
+			};
+		}
 		for (var j = 0; j < loopData.length; j++) {
 			foodList.innerHTML += `<h3 class="types">${loopData[j].type}</h3>`
 			var arrayData = loopData[j].volumes;
