@@ -1,13 +1,17 @@
 
 var foodList = document.getElementById("main-content")
 
-function dataCall () {
-	var data = JSON.parse(this.responseText);
-	console.log("data:", data);
-	populateDOM(data);
+function dogDataCall () {
+	var dogData = JSON.parse(this.responseText);
+	populateDOMDog(dogData);
 }
 
-function populateDOM (XHRdata) {
+function catDataCall () {
+	var catData = JSON.parse(this.responseText);
+	populateDOMCat(catData)
+}
+
+function populateDOMDog (XHRdata) {
 	for (var i = 0; i < XHRdata.dog_brands.length; i++) {
 		foodList.innerHTML += `<h2 class="brand">${XHRdata.dog_brands[i].brand}</h2>`;
 		var loopData = XHRdata.dog_brands[i].types;
@@ -23,10 +27,14 @@ function populateDOM (XHRdata) {
 
 }
 
-var dataRequest = new XMLHttpRequest();
+var dogDataRequest = new XMLHttpRequest();
+var catDataRequest = new XMLHttpRequest();
 
-dataRequest.addEventListener("load", dataCall);
+dogDataRequest.addEventListener("load", dogDataCall);
+catDataRequest.addEventListener("load", catDataCall);
 
-dataRequest.open("GET", "dogFood.json");
+dogDataRequest.open("GET", "dogFood.json");
+catDataRequest.open("GET", "catFood.json");
 
-dataRequest.send();
+dogDataRequest.send();
+catDataRequest.send();
