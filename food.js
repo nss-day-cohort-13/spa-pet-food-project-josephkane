@@ -14,6 +14,9 @@ function catDataCall () {
 function populateDOM (XHRdata) {
 	for (var i = 0; i < XHRdata.brands.length; i++) {
 		foodList.innerHTML += `<h2 class="brand">${XHRdata.brands[i].brand}</h2>`;
+		if (XHRdata.brands[i].brand === "Purrina" || XHRdata.brands[i].brand === "Meow Meal")	{
+			foodList.innerHTML += `<h3 class="breed-headline">Breed:</h3>`;
+		}
 		var loopData = XHRdata.brands[i].types;
 		var breedArray = XHRdata.brands[i];
 		if (XHRdata.brands[i].breed) {
