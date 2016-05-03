@@ -29,7 +29,7 @@ function populateDOM (XHRdata) {
 			HTML += `<h3 class="types">${loopData[j].type}</h3>`
 			var arrayData = loopData[j].volumes;
 			for (var k = 0; k < arrayData.length; k++) {
-				HTML += `<p class="size">${arrayData[k].size}</p><p class="price">${arrayData[k].price}</p>`;
+				HTML += `<div class="products"><ul><li>${arrayData[k].size}</li><li>${arrayData[k].price}</li></div>`;
 				console.log("html:", HTML);
 			} // k
 		} // j
