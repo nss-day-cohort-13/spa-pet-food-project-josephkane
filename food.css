@@ -41,3 +41,42 @@ LAYOUT
 .brand {
 	border: 1px solid red;
 }
+
+.brand-headline,
+.type-headline,
+.products {
+	text-align: center;
+}
+
+.types {
+	width: 47%;
+	float: left;
+}
+
+.products ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.breed-headline {
+	width: 26%;
+	display: inline-block;
+	text-align: right;
+}
+
+.cat-breeds {
+	display: inline-block;
+	padding: 10px 20px;
+}
+
+/*--------------------------
+
+CLEARFIX
+
+---------------------------*/
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}

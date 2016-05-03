@@ -1,5 +1,5 @@
 {
-	"brands": [
+	"cat_brands": [
 		{
 			"brand": "Purrina",
 			"breed": ["Siamese", "Bengal", "Snowshoe", "Munchkin"],
