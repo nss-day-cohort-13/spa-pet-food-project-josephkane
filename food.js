@@ -12,25 +12,28 @@ function catDataCall () {
 }
 
 function populateDOM (XHRdata) {
+	var HTML = "";
 	for (var i = 0; i < XHRdata.brands.length; i++) {
-		foodList.innerHTML += `<h2 class="brand">${XHRdata.brands[i].brand}</h2>`;
+		HTML = `<div class="brand"><h2 class="brand-headline">${XHRdata.brands[i].brand}</h2>`;
 		if (XHRdata.brands[i].brand === "Purrina" || XHRdata.brands[i].brand === "Meow Meal")	{
-			foodList.innerHTML += `<h3 class="breed-headline">Breed:</h3>`;
-		}
+			HTML += `<h3 class="breed-headline">Breed:</h3>`;
+		};
 		var loopData = XHRdata.brands[i].types;
 		var breedArray = XHRdata.brands[i];
 		if (XHRdata.brands[i].breed) {
 			for (var l = 0; l < breedArray.breed.length; l++) {
-				foodList.innerHTML += `<div class="cat-breeds">${breedArray.breed[l]}</div>`
+				HTML += `<p class="cat-breeds">${breedArray.breed[l]}</p>`
 			};
-		}
+		};
 		for (var j = 0; j < loopData.length; j++) {
-			foodList.innerHTML += `<h3 class="types">${loopData[j].type}</h3>`
+			HTML += `<h3 class="types">${loopData[j].type}</h3>`
 			var arrayData = loopData[j].volumes;
 			for (var k = 0; k < arrayData.length; k++) {
-				foodList.innerHTML += `<div class="size">${arrayData[k].size}</div><div class="price">${arrayData[k].price}</div`;
+				HTML += `<p class="size">${arrayData[k].size}</p><p class="price">${arrayData[k].price}</p>`;
+				console.log("html:", HTML);
 			} // k
 		} // j
+		foodList.innerHTML += (HTML += `</div>`);
 	} // i
 }
 
