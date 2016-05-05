@@ -14,11 +14,6 @@ function catDataCall () {
 function populateDOM (XHRdata) {
 	var HTML = "";
 	for (var i = 0; i < XHRdata.length; i++) {
-		// if (XHRdata[i].brand === "Chuck Wagon") {
-		// 	HTML = `<h1>For Dogs:</h1>`;
-		// } else if (XHRdata[i].brand === "Purrina") {
-		// 	HTML = `<h1>For Cats:</h1>`;
-		// };
 		HTML = `<div class="brand clearfix"><h2 class="brand-headline">${XHRdata[i].brand}</h2>`;
 		if (XHRdata[i].brand === "Purrina" || XHRdata[i].brand === "Meow Meal")	{
 			HTML += `<h3 class="breed-headline">Breeds:</h3>`;
@@ -31,7 +26,7 @@ function populateDOM (XHRdata) {
 			};
 		};
 		for (var j = 0; j < loopData.length; j++) {
-		HTML += `<div class="types">`;
+			HTML += `<div class="types">`;
 			HTML += `<h3 class="type-headline">${loopData[j].type}</h3>`
 			var arrayData = loopData[j].volumes;
 			HTML += `<div class="products"><ul>`;
