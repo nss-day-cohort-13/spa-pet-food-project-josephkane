@@ -1,0 +1,95 @@
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/*--------------------------
+
+LAYOUT
+
+---------------------------*/
+
+#main-header {
+	/*border: 1px solid red;*/
+	display: flex;
+	justify-content: flex-end;
+	background-color: slategrey;
+}
+
+#main-nav {
+	list-style: none;
+	display: flex;
+	padding-left: 0;
+	margin: 50px 0 0;
+}
+
+#main-nav li {
+	margin: 0 15px;
+	text-align: bottom;
+}
+
+#main-header h1 {
+	margin-right: auto;
+	padding-left: 20px;
+}
+
+#main-content {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.brand {
+	/*border: 1px solid red;*/
+	margin-top: 20px;
+	background-color: lightgrey;
+	border-radius: 10px;
+}
+
+.brand-headline,
+.type-headline,
+.products {
+	text-align: center;
+}
+
+.types {
+	width: 47%;
+	float: left;
+}
+
+.products ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.breed-headline {
+	width: 26%;
+	display: inline-block;
+	text-align: right;
+}
+
+.cat-breeds {
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 0 5px;
+	background-color: slategrey;
+	border-radius: 5px;
+}
+
+/*--------------------------
+
+CLEARFIX
+
+---------------------------*/
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
